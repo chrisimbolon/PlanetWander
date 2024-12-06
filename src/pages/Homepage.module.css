@@ -30,6 +30,6 @@
 .homepage h2 {
   width: 90%;
   font-size: 1.9rem;
-  color: var(--color-light--2);
+  color: var(--color-dark--2);
   margin-bottom: 2.5rem;
 }

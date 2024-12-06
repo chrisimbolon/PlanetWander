@@ -9,17 +9,22 @@ export default function Product() {
       <section>
         <div>
           <h2>
-            Simple pricing.
+            Transparent pricing
             <br />
-            Just $9/month.
+            only $5/month
           </h2>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae vel
-            labore mollitia iusto. Recusandae quos provident, laboriosam fugit
-            voluptatem iste.
+            Enjoy unlimited access to all features, free updates, and dedicated
+            support to help you wander the planet with ease.At its heart, Planet
+            Wander is more than just a travel platform — it's a community of
+            like-minded adventurers. Share your stories, exchange tips, and
+            celebrate the joy of exploring new horizons. Whether you are a solo
+            traveler or someone seeking a family-friendly getaway, Planet Wander
+            connects you with a network of travelers who share your curiosity
+            and love for the world. Let’s wander, discover, and grow together!
           </p>
         </div>
-        <img src="img-2.jpg" alt="overview of a large city with skyscrapers" />
+        <img src="City2.png" alt="illustration of a large on top of cloud" />
       </section>
     </main>
   );

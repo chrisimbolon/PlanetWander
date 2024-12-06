@@ -10,7 +10,7 @@
 
   --color-dark--0: #242a2e;
   --color-dark--1: #2d3439;
-  --color-dark--2: #42484d;
+  --color-dark--2: #4d5758;
   --color-light--1: #aaa;
   --color-light--2: #ececec;
   --color-light--3: #d6dee0;
@@ -29,7 +29,7 @@ html {
 
 body {
   font-family: "Manrope", sans-serif;
-  color: var(--color-light--2);
+  color: var(--color-dark--2);
   font-weight: 400;
   line-height: 1.6;
 }
@@ -59,7 +59,7 @@ input:focus {
 .cta:link,
 .cta:visited {
   display: inline-block;
-  background-color: var(--color-brand--2);
+  background-color: var(--color-brand--3);
   color: var(--color-dark--1);
   text-transform: uppercase;
   text-decoration: none;

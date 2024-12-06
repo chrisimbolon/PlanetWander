@@ -5,10 +5,10 @@
   gap: 1.6rem;
   align-items: center;
 
-  background-color: var(--color-dark--2);
+  background-color: var(--color-light--3);
   border-radius: 7px;
   padding: 1rem 2rem;
-  border-left: 5px solid var(--color-brand--2);
+  border-left: 5px solid var(--color-brand--3);
   cursor: pointer;
 
   color: inherit;

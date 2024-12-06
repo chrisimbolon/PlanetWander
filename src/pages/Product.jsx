@@ -7,21 +7,19 @@ export default function Product() {
       <PageNav />
       <section>
         <img
-          src="img-1.jpg"
+          src="pict1.jpg"
           alt="person with dog overlooking mountain with sunset"
         />
         <div>
-          <h2>About WorldWide.</h2>
+          <h2>Discover the Wonders of the World With Us</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo est
-            dicta illum vero culpa cum quaerat architecto sapiente eius non
-            soluta, molestiae nihil laborum, placeat debitis, laboriosam at fuga
-            perspiciatis?
-          </p>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis
-            doloribus libero sunt expedita ratione iusto, magni, id sapiente
-            sequi officiis et.
+            Planet Wander is your gateway to exploring the diverse beauty of our
+            planet. Whether you arre an intrepid traveler, a nature enthusiast,
+            or simply curious about the cultures that shape our world, Planet
+            Wander brings the magic of discovery to your fingertips. With a
+            user-friendly platform, stunning visuals, and curated information,
+            we aim to inspire your next adventure while deepening your
+            appreciation for the Earth's hidden gems.
           </p>
         </div>
       </section>
