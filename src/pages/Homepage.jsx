@@ -7,20 +7,28 @@ export default function Homepage() {
     <main className={styles.homepage}>
       <PageNav />
       <section>
-        <h1>
-          You explore the world.
-          <br />
-          We capture your adventures.
-        </h1>
-        <h2>
-          Explore a world map that traces your steps to every city you have
-          visited. <br />
-          Relive your amazing adventures and share your journey with friends as
-          you wander the globe
-        </h2>
-        <Link to="/login" className="cta">
-          Start Tracking Now
-        </Link>
+        <div className={styles.heroImage}>
+          <img
+            src="../Planet-wander-HeroAlt2-01.png"
+            alt="Planet Wander Hero"
+          />
+        </div>
+        <div className={styles.heroText}>
+          <h1>
+            You explore the world
+            <br />
+            We capture your adventures
+          </h1>
+          <h2>
+            Explore a world map that traces your steps to every city you have
+            visited. <br />
+            Relive your amazing adventures and share your journey with friends
+            as you wander the globe.
+          </h2>
+          <Link to="/login" className="cta">
+            Start Tracking Now
+          </Link>
+        </div>
       </section>
     </main>
   );

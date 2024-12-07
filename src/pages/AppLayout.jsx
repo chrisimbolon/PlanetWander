@@ -9,7 +9,6 @@ function AppLayout() {
       <Map />
       <SideBar />
       <User />
-      <p>APP</p>
     </div>
   );
 }
