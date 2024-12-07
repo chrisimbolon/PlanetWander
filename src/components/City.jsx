@@ -21,6 +21,7 @@ function City() {
 
   useEffect(
     function () {
+      console.log("Fetching city with ID:", id);
       getCity(id);
     },
     [id, getCity]

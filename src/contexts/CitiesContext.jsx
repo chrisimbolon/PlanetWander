@@ -40,8 +40,8 @@ function reducer(state, action) {
       return {
         ...state,
         isLoading: false,
-        // currentCity: action.payload,
-        cities: action.payload,
+        currentCity: action.payload,
+        // cities: action.payload,
       };
     case "city/created":
       return {
@@ -99,18 +99,6 @@ function CitiesProvider({ children }) {
     fetchCities();
   }, []);
 
-  // async function getCity(id) {
-  //   if (Number(id) === currentCity.id) return;
-  //   dispatch({ type: "loading" });
-  //   try {
-  //     const res = await fetch(`${BASE_URL}/cities/${id}`);
-  //     const data = await res.json();
-  //     dispatch({ type: "city/loaded", payload: data });
-  //   } catch (error) {
-  //     dispatch({ type: "rejected", payload: "error while loading data" });
-  //   }
-  // }
-
   const getCity = useCallback(
     async function getCity(id) {
       if (Number(id) === currentCity.id) return;
@@ -130,23 +118,6 @@ function CitiesProvider({ children }) {
     },
     [currentCity.id]
   );
-
-  // async function createCity(newCity) {
-  //   dispatch({ type: "loading" });
-  //   try {
-  //     const res = await fetch(`${BASE_URL}/cities`, {
-  //       method: "POST",
-  //       body: JSON.stringify(newCity),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
-  //     const data = await res.json();
-  //     dispatch({ type: "city/created", payload: data });
-  //   } catch (error) {
-  //     dispatch({ type: "rejected", payload: "error while writing data" });
-  //   }
-  // }
 
   async function createCity(newCity) {
     dispatch({ type: "loading" });

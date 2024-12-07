@@ -42,7 +42,7 @@ function Map() {
     },
     [geolocationPosition]
   );
-
+  console.log("cities:", cities);
   return (
     <div className={styles.mapContainer}>
       {!geolocationPosition && (
@@ -60,7 +60,26 @@ function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
-        {cities.map((city) => (
+
+        {/* Safeguard against non-array values */}
+
+        {Array.isArray(cities) && cities.length > 0 ? (
+          cities.map((city) => (
+            <Marker
+              position={[city.position.lat, city.position.lng]}
+              key={city.id}
+            >
+              <Popup>
+                <span>{city.emoji}</span>
+                <span>{city.cityName}</span>
+              </Popup>
+            </Marker>
+          ))
+        ) : (
+          <p>No cities available.</p> // Fallback message
+        )}
+
+        {/* {cities.map((city) => (
           <Marker
             position={[city.position.lat, city.position.lng]}
             key={city.id}
@@ -70,7 +89,8 @@ function Map() {
               <span>{city.cityName}</span>
             </Popup>
           </Marker>
-        ))}
+        ))} */}
+
         <ChangeCenter position={mapPosition} />
         <DetectClick />
       </MapContainer>

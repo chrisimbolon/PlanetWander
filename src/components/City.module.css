@@ -1,7 +1,7 @@
 .city {
   padding: 2rem 3rem;
   max-height: 70%;
-  background-color: var(--color-dark--2);
+  background-color: var(--color-light--2);
   border-radius: 7px;
   overflow: scroll;
 
