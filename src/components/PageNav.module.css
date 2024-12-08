@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem; /* Adjust padding for breathing room */
-  background-color: #333;
-  color: white;
+  /* background: rgba(209, 209, 209, 0.9); */
+
   position: relative;
   z-index: 10;
 }
@@ -67,14 +67,16 @@ a.ctaLink:visited {
   .nav ul {
     display: none;
   }
-
+  .nav {
+    background: rgba(209, 209, 209, 0.9);
+  }
   /* Show menu when toggled */
   .menu.show {
     display: flex; /* Visible when toggled */
     flex-direction: column;
     list-style: none;
     align-items: center;
-    background: var(--color-light--2);
+    background: rgba(207, 207, 207, 0.9);
     position: absolute;
     top: 60px;
     left: 0;

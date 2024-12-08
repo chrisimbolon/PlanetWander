@@ -86,7 +86,6 @@
 }
 
 /* Hero Section for Medium Screens */
-/* Hero Section for Medium Screens */
 @media (min-width: 768px) and (max-width: 1000px) {
   .heroImage img {
     max-height: 60vh; /* Keeps the hero image balanced */

@@ -1,0 +1,79 @@
+.pricing {
+  margin: 2.5rem;
+  padding: 2.5rem 5rem;
+  background-color: var(
+    --color-light--3
+  ); /* Slightly different background for variety */
+  min-height: calc(100vh - 5rem);
+}
+
+.pricing section {
+  max-width: 90rem;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7rem;
+  align-items: center;
+}
+
+.pricing section img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing h2 {
+  font-size: 4rem;
+  line-height: 1.3;
+  margin-bottom: 3rem;
+  text-transform: capitalize; /* Slightly refined typography */
+  color: var(--color-dark--1);
+}
+
+.pricing p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: var(--color-dark--2);
+}
+
+@media (max-width: 768px) {
+  .pricing section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .pricing img {
+    width: 90%;
+
+    margin: 0 auto;
+  }
+
+  .pricing h2 {
+    font-size: 3rem;
+  }
+
+  .pricing p {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+  .pricing section {
+    margin: 3rem auto;
+    gap: 5rem;
+  }
+
+  .pricing img {
+    width: 100%;
+  }
+
+  .pricing h2 {
+    font-size: 3.5rem;
+  }
+
+  .pricing p {
+    font-size: 1.5rem;
+  }
+}
