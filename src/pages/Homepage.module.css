@@ -28,9 +28,9 @@
 
 .heroImage img {
   width: 100%;
-  max-width: 500px; /* Adjust size to fit the design */
-  height: auto;
-  object-fit: contain; /* Ensures the image scales well */
+  max-width: 500px;
+  max-height: 60vh;
+  object-fit: cover; /* Ensures the image scales well */
   border: solid 5px whitesmoke;
   border-radius: 15px;
 }
@@ -42,8 +42,9 @@
 
 .heroText h1 {
   font-size: 4rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: var(--color-brand--3);
+  margin-bottom: 1rem;
 }
 
 .heroText h2 {
@@ -52,6 +53,9 @@
   margin-bottom: 2rem;
   width: 90%;
 }
+
+/* RESPONSIVENESS */
+
 @media (max-width: 768px) {
   .homepage section {
     flex-direction: column;
@@ -61,8 +65,54 @@
   .heroImage {
     margin-bottom: 2rem;
   }
-
+  .heroImage img {
+    max-height: 50vh;
+    object-fit: contain;
+  }
   .heroText {
     text-align: center;
+    padding: 1rem;
+  }
+  .heroText h1 {
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+
+  .heroText h2 {
+    font-size: 1.1rem; /* Adjust subheading for readability */
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Hero Section for Medium Screens */
+/* Hero Section for Medium Screens */
+@media (min-width: 768px) and (max-width: 1000px) {
+  .heroImage img {
+    max-height: 60vh; /* Keeps the hero image balanced */
+    object-fit: cover; /* Central focus */
+    width: 100%;
+  }
+
+  .heroText {
+    text-align: left;
+    padding: 1rem 2rem;
+  }
+
+  .heroText h1 {
+    font-size: 2.5rem; /* Slightly larger for better visibility */
+    line-height: 1.4; /* Adds breathing room */
+    margin-bottom: 1rem;
+  }
+
+  .heroText h2 {
+    font-size: 1.5rem; /* Improve readability for subheading */
+    line-height: 1.6;
+    margin-bottom: 1.5rem; /* Add more space below */
+  }
+
+  .cta {
+    font-size: 1.2rem; /* Larger button text */
+    padding: 1rem 2rem; /* Slightly bigger button for touch usability */
   }
 }

@@ -2,6 +2,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.5rem 1rem; /* Adjust padding for breathing room */
+  background-color: #333;
+  color: white;
+  position: relative;
+  z-index: 10;
+}
+
+/* Wrapper for logo and hamburger */
+.navContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo styling */
+.navContent > *:first-child {
+  flex: 1; /* Ensures the logo takes up space */
+  font-size: 1.5rem;
+  color: white;
 }
 
 .nav ul {
@@ -31,4 +50,76 @@ a.ctaLink:visited {
   color: var(--color-dark--0);
   padding: 0.8rem 2rem;
   border-radius: 7px;
+}
+
+/*  RESPONSIVENESS */
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Hamburger visible on mobile */
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    background: none; /* Remove default button styling */
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+
+  .nav ul {
+    display: none;
+  }
+
+  /* Show menu when toggled */
+  .menu.show {
+    display: flex; /* Visible when toggled */
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+    background: var(--color-light--2);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Links in the menu */
+  .menu a {
+    color: white;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  .menu a:hover {
+    color: #ff6347;
+  }
+
+  .navContent {
+    width: 100%; /* Ensure navContent spans full width */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo and Hamburger align properly */
+  }
+
+  .navContent > *:first-child {
+    flex: unset; /* Remove the 'flex: 1' that forces logo to take up extra space */
+  }
+}
+
+/* DESKTOP STYLES */
+@media (min-width: 769px) {
+  .menu {
+    display: flex; /* Menu always visible on desktop */
+    flex-direction: row;
+    gap: 2rem;
+    position: static; /* Normal flow */
+    background: none;
+    padding: 0;
+  }
+
+  .hamburger {
+    display: none; /* Hide hamburger on desktop */
+  }
 }
