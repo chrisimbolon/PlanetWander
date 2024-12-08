@@ -1,12 +1,23 @@
 .sidebar {
-  flex-basis: 56rem;
+  flex-basis: 40rem;
   background-color: var(--color-light--2);
-  padding: 3rem 5rem 3.5rem 5rem;
+  padding: 2rem 3rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - 4.8rem);
+  /* height: calc(100vh - 4.8rem); */
+  height: auto;
+}
+
+@media (max-width: 1000px) {
+  .sidebar {
+    flex-basis: auto; /* Allow it to shrink */
+    height: auto; /* Automatically adjust height */
+    padding: 2rem; /* Reduce padding */
+    width: 100%; /* Stretch across the bottom */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
 }
 
 .footer {

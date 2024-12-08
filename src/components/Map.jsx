@@ -79,18 +79,6 @@ function Map() {
           <p>No cities available.</p> // Fallback message
         )}
 
-        {/* {cities.map((city) => (
-          <Marker
-            position={[city.position.lat, city.position.lng]}
-            key={city.id}
-          >
-            <Popup>
-              <span>{city.emoji}</span>
-              <span>{city.cityName}</span>
-            </Popup>
-          </Marker>
-        ))} */}
-
         <ChangeCenter position={mapPosition} />
         <DetectClick />
       </MapContainer>

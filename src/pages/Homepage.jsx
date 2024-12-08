@@ -17,10 +17,11 @@ export default function Homepage() {
             We capture your adventures
           </h1>
           <h2>
-            Explore a world map that traces your steps to every city you have
-            visited. <br />
             Relive your amazing adventures and share your journey with friends
             as you wander the globe.
+            <br />
+            Explore a world map that traces your steps to every city you have
+            visited.
           </h2>
           <Link to="/login" className="cta">
             Start Tracking Now

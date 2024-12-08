@@ -4,4 +4,23 @@
   overscroll-behavior-y: none;
   display: flex;
   position: relative;
+  flex-direction: row;
+}
+
+@media (max-width: 1000px) {
+  .app {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .map {
+    order: 1; /* Move the map to the top */
+    flex-grow: 1; /* Ensure it takes up more space */
+    height: 40vh; /* Adjust height to fit nicely */
+  }
+
+  .sidebar {
+    order: 2; /* Sidebar goes below */
+    flex-grow: 1; /* Allow it to stretch if necessary */
+    height: auto; /* Let it adjust naturally */
+  }
 }
