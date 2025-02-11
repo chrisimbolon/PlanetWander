@@ -21,7 +21,7 @@
 }
 
 .user button {
-  background-color: var(--color-dark--2);
+  background-color: var(--color-light--2);
   border-radius: 7px;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -31,4 +31,8 @@
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+span{
+  color: var(--color-light--2);
 }

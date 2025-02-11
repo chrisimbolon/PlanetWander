@@ -28,7 +28,7 @@ const FAKE_USER = {
   name: "Anyone",
   email: "anyone@mayexplore.com",
   password: "welcome",
-  avatar: "/public/Chris.webp",
+  avatar: "/Chris.webp",
 };
 
 function AuthProvider({ children }) {
