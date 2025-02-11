@@ -8,6 +8,11 @@
   gap: 2rem;
 }
 
+
+label{
+  color: var(--color-light--2);
+}
+
 .row {
   display: flex;
   flex-direction: column;
