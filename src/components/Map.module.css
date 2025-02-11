@@ -1,24 +1,33 @@
 .mapContainer {
   flex-grow: 1;
-  height: 100%;
+  height: auto;
+  width: 100%;
   background-color: var(--color-dark--2);
   position: relative;
 }
 
 .map {
   height: 100%;
+  width: 100%;
 }
 
 @media (max-width: 1000px) {
+  .mapContainer {
+    height: auto; /* Adjust container height to be smaller on tablet */
+    width: 100%; /* Ensure it spans the full screen width */
+    margin-bottom: 1rem; /* Add spacing between map and sidebar */
+    border-radius: 0; /* Keep it clean with no rounded edges */
+  }
+
   .map {
-    height: 40vh; /* Adjust height when moved to the top */
-    width: 100%; /* Ensure it stretches across */
-    border-radius: 0; /* Remove any border radius for a clean look */
+    height: 70vh; /* Match container height */
+    width: 100%; /* Match container width */
+    border-radius: 0; /* Ensure no visual overflow from borders */
   }
 }
 
-/* Here we want to style classes that are coming from leaflet. 
-So we want CSS Modules to give us the ACTUAL classnames,
+/*  I intent to style classes that are coming from leaflet. 
+So I want CSS Modules to give me the ACTUAL classnames,
  not to add some random ID to them, because then they won't match the classnames defined inside the map.
  The solution is to define these classes as GLOBAL */
 :global(.leaflet-popup .leaflet-popup-content-wrapper) {
