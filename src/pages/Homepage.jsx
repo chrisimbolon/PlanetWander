@@ -8,7 +8,7 @@ export default function Homepage() {
       <PageNav />
       <section>
         <div className={styles.heroImage}>
-          <img src="../Planet-wander-Hero.jpg" alt="Planet Wander Hero" />
+          <img src="/Planet-wander-Hero.webp" alt="Planet Wander Hero" />
         </div>
         <div className={styles.heroText}>
           <h1>
