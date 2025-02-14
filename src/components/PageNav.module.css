@@ -39,6 +39,14 @@
   font-weight: 600;
 }
 
+
+.nav a:hover,
+.nav a:focus {
+  background-color: var(--color-brand--1); /* Lighter bg on hover */
+  color: var(--color-dark--2);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
 /* CSS Modules feature */
 .nav a:global(.active) {
   color: var(--color-brand--3);
