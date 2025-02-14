@@ -24,7 +24,7 @@ export default function Pricing() {
           </p>
         </div>
         <img
-          src="City2.png"
+          src="City.webp"
           alt="illustration of a large city on top of clouds"
         />
       </section>
