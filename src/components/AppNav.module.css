@@ -27,3 +27,7 @@
   background-color: var(--color-light--1);
 }
  
+
+.nav :link:hover{
+  color: black;
+}
