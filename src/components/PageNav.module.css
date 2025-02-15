@@ -42,7 +42,7 @@
 
 .nav a:hover,
 .nav a:focus {
-  background-color: var(--color-brand--1); /* Lighter bg on hover */
+  background-color: var(--color-brand--3); /* Lighter bg on hover */
   color: var(--color-dark--2);
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
@@ -84,7 +84,7 @@ a.ctaLink:visited {
     flex-direction: column;
     list-style: none;
     align-items: center;
-    background: rgba(207, 207, 207, 0.9);
+    background: rgba(207, 207, 207, 0.459);
     position: absolute;
     top: 60px;
     left: 0;
