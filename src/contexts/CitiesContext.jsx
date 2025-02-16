@@ -178,4 +178,4 @@ function useCities() {
   return context;
 }
 
-export { CitiesProvider, useCities };
+export { CitiesProvider, useCities, CitiesContext };
