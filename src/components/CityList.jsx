@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 
 import Spinner from "./Spinner";
 import styles from "./CityList.module.css";
@@ -15,6 +14,9 @@ function CityList() {
   console.log("Cities in CityList:", cities);
   if (!cities.length)
     return <Message message="Add first city by clicking a  on the map" />;
+
+
+
 
   return (
     <ul className={styles.cityList}>
