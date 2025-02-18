@@ -1,6 +1,8 @@
+/* global global */
+
 import { render, screen, act } from "@testing-library/react";
 import { CitiesProvider, useCities } from "../../contexts/CitiesContext";
-import { describe, it, expect, vi, test } from "vitest";
+import { describe, expect, vi, test } from "vitest";
 // import { createContext, useContext } from "react";
 
 // Helper component for testing context
@@ -16,6 +18,13 @@ const TestComponent = () => {
     );
   };
   
+  global.fetch = vi.fn(() =>
+    Promise.resolve({
+      json: () => Promise.resolve([]), // Mock empty response
+    })
+  );
+  
+
   describe("CitiesContext", () => {
     test("should have the correct initial state", async () => {
       await act(async () => {
@@ -25,9 +34,13 @@ const TestComponent = () => {
           </CitiesProvider>
         );
       });
-  
+    
       expect(screen.getByTestId("cities-count").textContent).toBe("0");
-      expect(screen.getByTestId("loading").textContent).toBe("Not Loading");
+      
+      // Wait for the loading state to be false
+      await screen.findByText("Not Loading");
+    
       expect(screen.getByTestId("error").textContent).toBe("");
     });
+    
   });
