@@ -1,15 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Map from "../Map";
-import { CitiesProvider } from "../../contexts/CitiesContext";
 import { useGeolocation } from "../../hooks/useGeolocation";
 import useUrlPosition from "../../hooks/useUrlPosition";
 import { describe, expect, vi, test, beforeEach } from "vitest";
 import "@testing-library/jest-dom";
+import { CitiesContext } from "../../contexts/CitiesContext";
 
-
-
-
+const mockCities = [
+  { id: 1, cityName: "Paris", emoji: "🇫🇷", position: { lat: 48.8566, lng: 2.3522 } },
+  { id: 2, cityName: "New York", emoji: "🇺🇸", position: { lat: 40.7128, lng: -74.006 } },
+];
 // Mock hooks
 vi.mock("../../hooks/useGeolocation", () => ({
   useGeolocation: vi.fn(),
@@ -50,11 +51,12 @@ describe("Map Component", () => {
 
     render(
       <BrowserRouter>
-        <CitiesProvider>
+        <CitiesContext.Provider value={{ cities: mockCities }}>
           <Map />
-        </CitiesProvider>
+        </CitiesContext.Provider>
       </BrowserRouter>
     );
+    
 
     // Check if map elements render
     expect(screen.getByTestId("map")).toBeInTheDocument();
@@ -77,11 +79,12 @@ describe("Map Component", () => {
 
     render(
       <BrowserRouter>
-        <CitiesProvider value={{ cities: mockCities }}>
+        <CitiesContext.Provider value={{ cities: mockCities }}>
           <Map />
-        </CitiesProvider>
+        </CitiesContext.Provider>
       </BrowserRouter>
     );
+    
 
     // Check if markers exist
     expect(screen.getAllByTestId("marker")).toHaveLength(2);
@@ -100,11 +103,12 @@ describe("Map Component", () => {
 
     render(
       <BrowserRouter>
-        <CitiesProvider>
+        <CitiesContext.Provider value={{ cities: mockCities }}>
           <Map />
-        </CitiesProvider>
+        </CitiesContext.Provider>
       </BrowserRouter>
     );
+    
 
     expect(screen.getByRole("button", { name: "use your position" })).toBeInTheDocument();
   });
@@ -120,11 +124,12 @@ describe("Map Component", () => {
 
     render(
       <BrowserRouter>
-        <CitiesProvider>
+        <CitiesContext.Provider value={{ cities: mockCities }}>
           <Map />
-        </CitiesProvider>
+        </CitiesContext.Provider>
       </BrowserRouter>
     );
+    
 
     expect(screen.getByRole("button", { name: "loading" })).toBeInTheDocument();
   });
