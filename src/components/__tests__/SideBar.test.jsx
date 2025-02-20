@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import SideBar from "../SideBar";
-import { describe,  expect, } from "vitest";
+import { describe,  expect,test } from "vitest";
 import "@testing-library/jest-dom";
 
 describe("SideBar component", () => {
