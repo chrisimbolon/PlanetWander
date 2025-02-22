@@ -55,6 +55,7 @@ function Map() {
         zoom={13}
         scrollWheelZoom={true}
         className={styles.map}
+        data-testid="leaflet-map"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
