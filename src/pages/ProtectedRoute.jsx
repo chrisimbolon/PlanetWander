@@ -15,13 +15,7 @@ function ProtectedRoute({ children }) {
 
   // Render the protected component if authenticated
   return children;
-  // useEffect(
-  //   function () {
-  //     if (!isAuthenticated) navigate("/");
-  //   },
-  //   [isAuthenticated, navigate]
-  // );
-  // return isAuthenticated ? children : null;
+
 }
 
 export default ProtectedRoute;

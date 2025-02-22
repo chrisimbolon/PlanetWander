@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+
 import { describe, it, expect } from "vitest";
 import { AuthProvider, useAuth } from "../../contexts/FakeAuthContext";
 import { renderHook, act } from "@testing-library/react";
