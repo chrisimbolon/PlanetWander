@@ -8,4 +8,12 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
   },
+  server: {
+    host: "0.0.0.0", // Explicitly bind to all network interfaces
+    port: 5173, // Dev server port
+  },
+  preview: {
+    host: "0.0.0.0", // Explicitly bind for preview mode
+    port: 4173, // Preview server port
+  }
 })
