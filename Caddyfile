@@ -1,0 +1,4 @@
+:5173 {
+    root * /srv
+    file_server
+}
