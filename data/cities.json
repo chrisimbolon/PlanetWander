@@ -71,6 +71,18 @@
         "lat": 32.78438821072233,
         "lng": 34.98605227487178
       }
+    },
+    {
+      "id": "c7f1",
+      "cityName": "Kecamatan Singkep Barat",
+      "country": "Indonesia",
+      "emoji": "🇮🇩",
+      "date": "2025-03-11T07:58:17.546Z",
+      "notes": "cool",
+      "position": {
+        "lat": "-0.5053645409602877",
+        "lng": "104.39680942605918"
+      }
     }
   ]
 }
