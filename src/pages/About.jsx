@@ -1,9 +1,9 @@
-import styles from "./Product.module.css";
+import styles from "./About.module.css";
 import PageNav from "../components/PageNav";
 
-export default function Product() {
+export default function About() {
   return (
-    <main className={styles.product}>
+    <main className={styles.about}>
       <PageNav />
       <section>
         <img

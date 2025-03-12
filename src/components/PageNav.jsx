@@ -29,10 +29,10 @@ function PageNav() {
       </div>
       <ul className={`${styles.menu} ${isMenuOpen ? styles.show : ""}`}>
         <li>
-          <NavLink to="/pricing">Pricing</NavLink>
+          <NavLink to="/testimonial">Testimonial</NavLink>
         </li>
         <li>
-          <NavLink to="/product">Product</NavLink>
+          <NavLink to="/about">About</NavLink>
         </li>
         <li>
           {isAuthenticated ? (
