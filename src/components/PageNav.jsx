@@ -2,22 +2,23 @@ import { NavLink } from "react-router-dom";
 import styles from "./PageNav.module.css";
 import Logo from "./Logo";
 import { useState } from "react";
+import { useAuth } from "../contexts/FakeAuthContext"; // Import auth context
 
 function PageNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isAuthenticated, logout } = useAuth(); // Get auth state & logout function
 
   function toggleMenu() {
-    // setIsMenuOpen((prev) => !prev);
     setIsMenuOpen((prev) => {
       console.log("Menu state toggled:", !prev);
       return !prev;
     });
   }
+
   return (
     <nav className={styles.nav}>
       <div className={styles.navContent}>
         <Logo />
-        {/* Hamburger / Close Icon */}
         <button
           className={`${styles.hamburger}`}
           onClick={toggleMenu}
@@ -34,9 +35,15 @@ function PageNav() {
           <NavLink to="/product">Product</NavLink>
         </li>
         <li>
-          <NavLink to="/login" className={styles.ctaLink}>
-            login
-          </NavLink>
+          {isAuthenticated ? (
+            <button className={styles.ctaLink} onClick={logout}>
+              Logout
+            </button>
+          ) : (
+            <NavLink to="/login" className={styles.ctaLink}>
+              Login
+            </NavLink>
+          )}
         </li>
       </ul>
     </nav>
