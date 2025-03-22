@@ -8,62 +8,72 @@ import {
   Popup,
   useMap,
   useMapEvents,
+  LayersControl,
 } from "react-leaflet";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCities } from "../contexts/CitiesContext";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import { useGeolocation } from "../hooks/useGeolocation";
 import Button from "./Button";
 import useUrlPosition from "../hooks/useUrlPosition";
 
 function Map() {
   const { cities } = useCities();
-  const [mapPosition, setMapPosition] = useState([40, 0]);
+  const [mapPosition, setMapPosition] = useState([52.52, 13.405]); // Centered on Germany (Berlin)
   const {
-    isLoading: isLoadingPostiion,
+    isLoading: isLoadingPosition,
     position: geolocationPosition,
     getPosition,
   } = useGeolocation();
 
   const [mapLat, mapLng] = useUrlPosition();
 
-  useEffect(
-    function () {
-      if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
-    },
-    [mapLat, mapLng]
-  );
+  useEffect(() => {
+    if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
+  }, [mapLat, mapLng]);
 
-  useEffect(
-    function () {
-      if (geolocationPosition)
-        setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
-    },
-    [geolocationPosition]
-  );
-  console.log("cities:", cities);
+  useEffect(() => {
+    if (geolocationPosition)
+      setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
+  }, [geolocationPosition]);
+
   return (
     <div className={styles.mapContainer}>
       {!geolocationPosition && (
         <Button type="position" onClick={getPosition}>
-          {isLoadingPostiion ? "loading" : "use your position"}
+          {isLoadingPosition ? "loading" : "use your position"}
         </Button>
       )}
+
       <MapContainer
         center={mapPosition}
-        zoom={13}
+        zoom={6} // Slightly zoomed out to see more of Germany
         scrollWheelZoom={true}
         className={styles.map}
         data-testid="map"
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
-        />
+        <LayersControl position="topright">
+          
+            
+          <LayersControl.BaseLayer checked name="Cyberpunk Dystopian">
+            <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
+          </LayersControl.BaseLayer>
+
+          <LayersControl.BaseLayer name="Default (HOT)">
+            <TileLayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" />
+          </LayersControl.BaseLayer>
+
+          <LayersControl.BaseLayer name="OpenStreetMap">
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          </LayersControl.BaseLayer>
+
+          <LayersControl.BaseLayer name="Vintage Paper Map">
+            <TileLayer url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png" />
+          </LayersControl.BaseLayer>
+         
+        </LayersControl>
 
         {/* Safeguard against non-array values */}
-
         {Array.isArray(cities) && cities.length > 0 ? (
           cities.map((city) => (
             <Marker

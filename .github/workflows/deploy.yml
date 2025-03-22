@@ -1,0 +1,45 @@
+name: Deploy PlanetWander
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/github-actions-key
+          chmod 600 ~/.ssh/github-actions-key
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to DigitalOcean
+        run: |
+          ssh -i ~/.ssh/github-actions-key ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} <<'EOF'
+            set -ex
+
+            echo "🔹 Navigating to project directory..."
+            cd /home/apps/planetwander || { echo "❌ Folder not found!"; exit 1; }
+
+            echo "🔹 Pulling latest code..."
+            git pull origin main
+
+            echo "🔹 Updating environment variables..."
+            echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" > .env
+
+            echo "🔹 Restarting containers..."
+            docker compose down
+            docker compose up --build -d
+
+            echo "🔹 Cleaning up old images..."
+            docker image prune -af
+          EOF

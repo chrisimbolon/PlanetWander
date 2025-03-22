@@ -18,7 +18,7 @@ function App() {
   return (
     <AuthProvider>
       <CitiesProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/planetwander">
           <Routes>
             <Route index element={<Homepage />} />
             <Route path="about" element={<About />} />

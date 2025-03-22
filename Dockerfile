@@ -12,16 +12,19 @@ COPY . .
 RUN npm run build
 
 # Serve Stage
-FROM caddy:2.7-alpine
+FROM nginx:alpine
 
-WORKDIR /srv
+WORKDIR /usr/share/nginx/html
+
+# Remove default NGINX static files
+RUN rm -rf ./*
 
 # Copy the built app from the Node.js stage
-COPY --from=builder /app/dist /srv
+COPY --from=builder /app/dist ./
 
-# Copy the Caddy configuration
-COPY Caddyfile /etc/caddy/Caddyfile
+# Copy a custom NGINX config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 5173
+EXPOSE 80
 
-CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile"]
+CMD ["nginx", "-g", "daemon off;"]

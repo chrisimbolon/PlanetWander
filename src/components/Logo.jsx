@@ -5,7 +5,7 @@ function Logo() {
   return (
     <Link to="/">
       <img
-        src="/Planet-Wander-Logo.png"
+        src="/planetwander/Planet-Wander-Logo.png"
         alt="Planet Wander logo"
         className={styles.logo}
       />
