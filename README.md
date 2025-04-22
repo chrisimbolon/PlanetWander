@@ -79,8 +79,8 @@ Build modular, maintainable frontend apps with a smooth UI
 Author
 Christyan Simbolon
 
-🌐 Portfolio
+🌐 Portfolio(https://chrisimbolon.dev/)
 
-💻 GitHub
+💻 GitHub(https://github.com/chrisimbolon)
 
-🔗 LinkedIn
+🔗 LinkedIn(https://www.linkedin.com/in/christyan-simbolon-60a854360/)
