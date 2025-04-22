@@ -47,7 +47,7 @@ Clone the repository and run it with Docker Compose:
 git clone https://github.com/chrisimbolon/planetwander.git
 cd planetwander
 docker-compose up --build
-```
+
 
 Frontend available at http://localhost:5173
 
