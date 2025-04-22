@@ -65,7 +65,8 @@ planetwander/
 ├── public/
 └── src/
 ```
-About the Project
+✨ About the Project
+
 PlanetWander is part of my developer portfolio. It showcases my ability to:
 
 Set up fullstack projects with independent services

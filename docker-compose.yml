@@ -10,6 +10,8 @@ services:
     ports:
       - "8000:8000"
     command: ["npx", "json-server", "--watch", "data/cities.json", "--host", "0.0.0.0", "--port", "8000"]
+    networks:
+      - caddy-net
 
   frontend:
     build: .
@@ -19,6 +21,12 @@ services:
     depends_on:
       - backend
     environment:
-      - VITE_API_URL=${VITE_API_URL} # Reads from the .env file
+      - VITE_API_URL=${VITE_API_URL} 
     env_file:
-      - .env  # Ensure this is included
+      - .env  
+    networks:
+      - caddy-net
+
+networks:
+  caddy-net:
+    external: true
