@@ -47,3 +47,42 @@ Clone the repository and run it with Docker Compose:
 git clone https://github.com/chrisimbolon/planetwander.git
 cd planetwander
 docker-compose up --build
+<<<<<<< HEAD
+=======
+
+Frontend available at http://localhost:5173
+
+Backend available at http://localhost:8000
+
+Make sure VITE_API_URL=http://backend:8000 is correctly set in your .env file or Docker build args.
+
+📁 Project Structure
+
+planetwander/
+├── Dockerfile    
+├── README.md    
+├── docker-compose.yml
+├── index.html    
+├── public/
+└── src/
+
+About the Project
+PlanetWander is part of my developer portfolio. It showcases my ability to:
+
+Set up fullstack projects with independent services
+
+Use Docker and Compose to replicate production environments
+
+Configure custom reverse proxy routing with Caddy
+
+Build modular, maintainable frontend apps with a smooth UI
+
+Author
+Christyan Simbolon
+
+🌐 Portfolio
+
+💻 GitHub
+
+🔗 LinkedIn
+>>>>>>> 4d8cf10 (add an update README.md)
