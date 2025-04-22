@@ -56,7 +56,7 @@ Backend available at http://localhost:8000
 Make sure VITE_API_URL=http://backend:8000 is correctly set in your .env file or Docker build args.
 
 📁 Project Structure
-
+```bash
 planetwander/
 ├── Dockerfile    
 ├── README.md    
@@ -64,7 +64,7 @@ planetwander/
 ├── index.html    
 ├── public/
 └── src/
-
+```
 About the Project
 PlanetWander is part of my developer portfolio. It showcases my ability to:
 
