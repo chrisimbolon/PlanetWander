@@ -11,7 +11,7 @@ COPY . .
 
 RUN npm run build
 
-# Serve Stage
+# Serving Stage
 FROM nginx:alpine
 
 WORKDIR /usr/share/nginx/html
@@ -19,10 +19,10 @@ WORKDIR /usr/share/nginx/html
 # Remove default NGINX static files
 RUN rm -rf ./*
 
-# Copy the built app from the Node.js stage
+# Copying the built app from the Node.js stage
 COPY --from=builder /app/dist ./
 
-# Copy a custom NGINX config
+# Copying a custom NGINX config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
