@@ -22,11 +22,11 @@
 
 @media (max-width: 1000px) {
   .sidebar {
-    flex-basis: 30rem; /* Allow it to shrink */
-    height: auto; /* Automatically adjust height */
-    padding: 1.5rem 2rem; /* Reduce padding */
-    width: 100%; /* Stretch across the bottom */
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    flex-basis: 30rem; 
+    height: auto; /* Automatically adjusting height */
+    padding: 1.5rem 2rem; /* Reducing padding */
+    width: 100%; /* Stretching across the bottom */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); 
     justify-content: flex-start;
   }
 }
