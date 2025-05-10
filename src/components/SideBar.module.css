@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: calc(100vh - 4.8rem); */
   height: auto;
 }
 
@@ -23,7 +22,7 @@
 @media (max-width: 1000px) {
   .sidebar {
     flex-basis: 30rem; 
-    height: auto; /* Automatically adjusting height */
+    height: auto; 
     padding: 1.5rem 2rem; /* Reducing padding */
     width: 100%; /* Stretching across the bottom */
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); 
