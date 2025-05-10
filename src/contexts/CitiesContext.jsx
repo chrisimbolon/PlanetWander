@@ -89,7 +89,7 @@ function CitiesProvider({ children }) {
       try {
         const res = await fetch(`${BASE_URL}/cities`);
         const data = await res.json();
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // Add 1-second delay
+        await new Promise((resolve) => setTimeout(resolve, 1000)); // Adding 1-second delay
         console.log("Fetched Data Fetched Cities:", data);
         dispatch({ type: "cities/loaded", payload: data });
       } catch (error) {

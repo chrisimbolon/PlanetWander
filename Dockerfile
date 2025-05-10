@@ -16,7 +16,7 @@ FROM nginx:alpine
 
 WORKDIR /usr/share/nginx/html
 
-# Remove default NGINX static files
+# Removing default NGINX static files
 RUN rm -rf ./*
 
 # Copying the built app from the Node.js stage
